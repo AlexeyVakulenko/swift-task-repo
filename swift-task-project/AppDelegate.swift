@@ -19,11 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let tasksViewController = TasksViewController()
-        let navigationController = UINavigationController(rootViewController: tasksViewController)        
-        navigationController.viewControllers = [tasksViewController]
+        let notesViewController = NotesViewController()
+        let tacksViewController = TacksViewController()
         
-        window?.rootViewController = navigationController
+        let tabController = UITabBarController()
+        
+        tabController.viewControllers = [notesViewController, tacksViewController]
+//        let navigationController = UINavigationController(rootViewController: notesViewController)
+//        navigationController.viewControllers = [notesViewController]
+        
+        window?.rootViewController = tabController
         window?.makeKeyAndVisible()
         return true
     }
